@@ -1,0 +1,19 @@
+﻿<Window x:Class="RevitAPITrainingDuct.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPITrainingDuct"
+             mc:Ignorable="d" 
+             Height="300" Width="300"
+             Title="Создание воздуховода по двум введенным точкам">
+    <StackPanel>
+        <Label Content="Выбрать тип воздуховода" Margin="5"/>
+        <ComboBox ItemsSource="{Binding SupplyAirs}" SelectedValue="{Binding SelectedSupplyAir}" DisplayMemberPath="Name" Margin="5"/>
+        <Label Content="Выбрать уровень" Margin="5"/>
+        <ComboBox ItemsSource="{Binding Levels}" SelectedValue="{Binding SelectedLevel}" DisplayMemberPath="Name" Margin="5"/>
+        <Label Content="Введите смещение воздуховода" Margin="5"/>
+        <TextBox Text="{Binding DuctCenter}" Margin="5"/>
+        <Button Content="Применить" Command="{Binding SaveCommand}" Margin="5"/>
+    </StackPanel>
+</Window>
